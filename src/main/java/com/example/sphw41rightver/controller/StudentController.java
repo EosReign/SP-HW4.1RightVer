@@ -81,14 +81,14 @@ public class StudentController {
     }
 
     @GetMapping("/countStudents")
-    public ResponseEntity<String> getAmountOfStudents() {
-        String amountOfStudents = studentService.getAmountOfStudents() + " students";
+    public ResponseEntity<Integer> getAmountOfStudents() {
+        Integer amountOfStudents = studentService.getAmountOfStudents();
         return ResponseEntity.ok(amountOfStudents);
     }
 
     @GetMapping("/averageAgeOfStudents")
-    public ResponseEntity<String> getAverageAgeOfStudents() {
-        String averageAgeOfStudents = "Average age of students " + studentService.getAverageAgeOfStudents() + " years";
+    public ResponseEntity<Double> getAverageAgeOfStudents() {
+        Double averageAgeOfStudents = studentService.getAverageAgeOfStudents();
         return ResponseEntity.ok(averageAgeOfStudents);
     }
 
